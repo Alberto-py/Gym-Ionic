@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RutinasCategoriaPageRoutingModule } from './rutinas-categoria-routing.module';
 
 import { RutinasCategoriaPage } from './rutinas-categoria.page';
+import { ListadoRutinasComponent } from '../../components/listado-rutinas/listado-rutinas.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { RutinasCategoriaPage } from './rutinas-categoria.page';
     IonicModule,
     RutinasCategoriaPageRoutingModule
   ],
-  declarations: [RutinasCategoriaPage]
+  declarations: [RutinasCategoriaPage, ListadoRutinasComponent],
+  entryComponents: [ListadoRutinasComponent]
 })
 export class RutinasCategoriaPageModule {}

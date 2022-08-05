@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomePage {
     speed: 400,
     slidesPerView:2.5
   };
-  
+
   categorias = [
   {
     foto:"image.png",
@@ -25,6 +26,14 @@ export class HomePage {
   }
 ]
   fakeArray =[1,1,1,1,1,1];
-  constructor() {}
+  constructor(public router:Router) {}
 
-}
+  goToSearchPage() {
+    this.router.navigate(['search-page']);
+  }
+
+  goToCategoriesPage() {
+    this.router.navigate(['rutinas-categoria']);
+  }
+
+}//Clase

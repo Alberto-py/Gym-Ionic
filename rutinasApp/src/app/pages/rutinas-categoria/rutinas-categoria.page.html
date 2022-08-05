@@ -1,9 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>rutinasCategoria</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="bg-app">
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="bg-app ion-padding">
+  <ion-text class="encabezado" color="primary">
+    FullBody
+  </ion-text>
+
+  <app-listado-rutinas></app-listado-rutinas>
 
 </ion-content>
