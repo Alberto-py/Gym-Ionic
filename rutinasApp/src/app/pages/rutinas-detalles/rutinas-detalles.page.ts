@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {NavController} from '@ionic/angular';
 @Component({
   selector: 'app-rutinas-detalles',
   templateUrl: './rutinas-detalles.page.html',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutinasDetallesPage implements OnInit {
 
-  constructor() { }
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400,
+    slidesPerView:3.5
+  };
+  
+  fakeSugerencias = [1,1,1,1,1,1,1];
+  
+  constructor(public navCtrl: NavController) { }
 
-  ngOnInit() {
+  ngOnInit( ) {
   }
-
+ goBack(){
+  this.navCtrl.pop();
+ 
+ }
 }

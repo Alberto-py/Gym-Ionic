@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-listado-rutinas',
   templateUrl: './listado-rutinas.component.html',
@@ -9,8 +9,13 @@ export class ListadoRutinasComponent implements OnInit {
 
   fakeArray = [1,1,1,1,1,1];
 
-  constructor() { }
+  constructor( public router: Router) { }
+   ngOnInit() {}
 
-  ngOnInit() {}
+  goTorDetallePage() {
+    this.router.navigate(['rutinas-detalles']);
+  }
+
+ 
 
 }
