@@ -1,7 +1,5 @@
 {
   "name": "rutinasApp",
-  "integrations": {
-    "capacitor": {}
-  },
+  "integrations": {},
   "type": "angular"
 }
