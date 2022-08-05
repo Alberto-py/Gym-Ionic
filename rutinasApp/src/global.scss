@@ -29,47 +29,47 @@
 .bg-app{
     --background: #F4FCFF;
 }
+
 .color-gris{
     color: #B7C3CE;
-
-
 }
+
 .encabezado{
     font-size: 20px;
     font-weight: bold;
 }
-.img-ejercicios-listado{
+
+.img-ejercicio-listado{
     width: 345px;
     height: 140px;
     border-radius: 20px;
     margin-top: 5px;
-    
-   }
+}
 
 .nombre-ejercicio-listado{
     font-size: 18px;
     font-weight: 500px;
     margin-top: 5px;
-
 }
 
-.description-ejercio-listado{
+.descripcion-ejercicio-listado{
     font-size: 15px;
     font-weight: 400;
 }
-.column-icons-texto-ejercicio-listado{
+
+.columns-texto-icons-ejercicio-listado{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.icon-ejercicio-listado{
-    font-size: 20px;
-    margin-left:-10px;
 
+.icons-ejercicio-listado{
+    font-size: 20px;
+    margin-left: -10px;
 }
 
 .texto-icons-ejercicio-listado{
-    font-size:14px;
+    font-size: 14px;
     font-weight: 400;
     margin-left: 3px;
 }
