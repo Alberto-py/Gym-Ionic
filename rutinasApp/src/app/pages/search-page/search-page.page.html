@@ -1,9 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>searchPage</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+      <ion-searchbar placeholder="buscar ejercicio" color="light"></ion-searchbar>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg-app ion-padding">
+  <br>
+  <app-listado-rutinas></app-listado-rutinas>
 
 </ion-content>

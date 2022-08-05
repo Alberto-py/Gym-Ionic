@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SearchPagePageRoutingModule } from './search-page-routing.module';
 
 import { SearchPagePage } from './search-page.page';
+import { ListadoRutinasComponent } from "../../components/listado-rutinas/listado-rutinas.component"
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { SearchPagePage } from './search-page.page';
     IonicModule,
     SearchPagePageRoutingModule
   ],
-  declarations: [SearchPagePage]
+  declarations: [SearchPagePage, ListadoRutinasComponent],
+  entryComponents: [ListadoRutinasComponent]
 })
 export class SearchPagePageModule {}

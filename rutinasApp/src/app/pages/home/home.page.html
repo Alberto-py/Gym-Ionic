@@ -23,7 +23,7 @@
     Categorías
   </ion-text>
   <ion-slides [options] ="slideOpts">
-      <ion-slide *ngFor="let categoria of categorias" class="slide">
+      <ion-slide (click)="goToCategoriesPage()" *ngFor="let categoria of categorias" class="slide">
         <img class="img-categoria" [src]="categoria.imagen">
         <ion-text class="text-cuerda">
           {{ categoria.nombreCategoria }}
