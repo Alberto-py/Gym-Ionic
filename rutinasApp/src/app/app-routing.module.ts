@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'rutinas-categoria',
+    loadChildren: () => import('./pages/rutinas-categoria/rutinas-categoria.module').then( m => m.RutinasCategoriaPageModule)
+  },
+  {
+    path: 'search-page',
+    loadChildren: () => import('./pages/search-page/search-page.module').then( m => m.SearchPagePageModule)
+  },
+  {
+    path: 'rutinas-detalles',
+    loadChildren: () => import('./pages/rutinas-detalles/rutinas-detalles.module').then( m => m.RutinasDetallesPageModule)
+  },
 ];
 
 @NgModule({
