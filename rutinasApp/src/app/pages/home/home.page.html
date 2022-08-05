@@ -1,12 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class = "bg-app">
+    <ion-buttons slot="end">
+      <ion-icon class = "icon-search" name="search-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+< [fullscreen]="true" class="bg-app ion-padding">
+  <ion-slides>
+    <ion-slide>
+      <img style= "padding-left: 20px;" src="https://images.unsplash.com/photo-1594737626072-90dc274bc2bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+    </ion-slide>
+    <ion-slide>
+      <img style= "padding-left: 20px;" src="https://images.unsplash.com/photo-1594737626072-90dc274bc2bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+    </ion-slide>
+    <ion-slide>
+      <img  style= "padding-left: 20px;" src="https://images.unsplash.com/photo-1594737626072-90dc274bc2bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+    </ion-slide>
+  </ion-slides>
+  
+    <ion-text class = "encabezado" color="primary">
+      Catagorias Disponibles
+    </ion-text>
+  
+
+<ion-slides [options] ="slideOpts">
+  <ion-slide *nFor ="let categoria of categorias" class="slide">
+    <img class="img-categoria" [src]="categoria.foto">
+    <ion-text class="text-cuerda">
+      {{ categoria.nombreCategoria}}
+    </ion-text>
+  </ion-slide>
+
+</ion-slides>
+
+
+
+  </ion-content>
+<!--
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
@@ -16,5 +47,6 @@
   <div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  </div>-->
+
+

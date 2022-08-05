@@ -1,27 +1,26 @@
-#container {
-  text-align: center;
+.icon-search{
+  color:#B7C3CE;
+  font-size: 25px;
+  margin: 10px;
+}
 
+.slide{
+  width: 140;
+  height: 90%;
+  margin-top: 5px;
+  margin-left:10px;
+}
+
+img-categoria{
+  border-radius:12px;
+  width: 140%;
+  z-index: 0;
+}
+.text-cuerda{
+  z-index: 1;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
+  color: white;
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  left: 10px;
+  bottom: 10px;
 }
