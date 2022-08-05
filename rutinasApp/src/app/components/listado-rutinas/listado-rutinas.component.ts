@@ -12,7 +12,7 @@ export class ListadoRutinasComponent implements OnInit {
   constructor( public router: Router) { }
    ngOnInit() {}
 
-  goTorDetallePage() {
+  goToDetallePage() {
     this.router.navigate(['rutinas-detalles']);
   }
 
