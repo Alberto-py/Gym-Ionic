@@ -6,23 +6,10 @@
   </ion-toolbar>
 </ion-header>
 
-< [fullscreen]="true" class="bg-app ion-padding">
-  <ion-slides>
-    <ion-slide>
-      <img style= "padding-left: 20px;" src="https://images.unsplash.com/photo-1594737626072-90dc274bc2bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
-    </ion-slide>
-    <ion-slide>
-      <img style= "padding-left: 20px;" src="https://images.unsplash.com/photo-1594737626072-90dc274bc2bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
-    </ion-slide>
-    <ion-slide>
-      <img  style= "padding-left: 20px;" src="https://images.unsplash.com/photo-1594737626072-90dc274bc2bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
-    </ion-slide>
-  </ion-slides>
-  
-    <ion-text class = "encabezado" color="primary">
-      Catagorias Disponibles
-    </ion-text>
-  
+<ion-content [fullscreen]="true" class="bg-app ion-padding">
+  <ion-text class="encabezado" color="primary">
+    categorias
+  </ion-text>
 
 <ion-slides [options] ="slideOpts">
   <ion-slide *nFor ="let categoria of categorias" class="slide">
