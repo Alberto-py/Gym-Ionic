@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "rutinasApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
