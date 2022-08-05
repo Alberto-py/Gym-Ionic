@@ -12,16 +12,46 @@
   </ion-text>
 
 <ion-slides [options] ="slideOpts">
-  <ion-slide *nFor ="let categoria of categorias" class="slide">
+  <ion-slide *ngFor ="let categoria of categorias" class="slide">
     <img class="img-categoria" [src]="categoria.foto">
     <ion-text class="text-cuerda">
       {{ categoria.nombreCategoria}}
     </ion-text>
   </ion-slide>
-
 </ion-slides>
 
+<br>
+<ion-text class="encabezado" color ="primary">
+  Listado de Recetas
+</ion-text>
+  <div *ngFor="let item of fakeArray">
+    <img class="img-ejercicio-listado" src="https://images.unsplash.com/photo-1595909315417-2edd382a56dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+    <ion-text class="nombre-ejercicio-listado" color="primary">
+     salud y riesgo
+     </ion-text><br>
+    <ion-text class="desscription-ejercicio-listado ion-text-wrap color-gris" >
 
+    </ion-text>
+    <ion-drid>
+      <ion-row>
+        <ion-col class="columns-icons-texto-ejercicio-listado" size ="3">
+            <ion-icon class="icons-ejericio-listado" color="warning" name="alarm-outline">
+            <icon-text class="texto-icons-ejercicio-listado" color="primary">
+              45min
+            </icon-text>
+            <ion-col class="columns-icons-texto-ejercicio-listado" size ="3"></ion-col>
+            <ion-icon style="font-size: 25px;" class="icons-ejericio-listado" color="warning" name="alarm-outline">
+              <icon-text class="texto-icons-ejercicio-listado" color="primary">
+                medio
+              </icon-text>
+              </ion-icon>
+            
+        </ion-col>
+      </ion-row>
+    </ion-drid>
+ 
+ 
+  </div>
 
   </ion-content>
 <!--
