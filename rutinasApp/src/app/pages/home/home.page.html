@@ -1,21 +1,20 @@
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar class = "bg-app">
     <ion-buttons slot="end">
-      <ion-icon class = "icon-search" name="search-outline"></ion-icon>
+      <ion-icon (click)="goToSearchPage()" class="icon-search" name="search-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="bg-app ion-padding">
   <ion-text class="encabezado" color="primary">
-    categorias
+    Categorías
   </ion-text>
-
 <ion-slides [options] ="slideOpts">
-  <ion-slide *nFor ="let categoria of categorias" class="slide">
+  <ion-slide (click)="goToCategoriesPage()" *ngFor="let categoria of categorias" class="slide">
     <img class="img-categoria" [src]="categoria.foto">
     <ion-text class="text-cuerda">
-      {{ categoria.nombreCategoria}}
+      {{ categoria.nombreCategoria }}
     </ion-text>
   </ion-slide>
 
