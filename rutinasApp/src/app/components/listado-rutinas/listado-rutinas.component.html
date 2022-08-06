@@ -1,23 +1,23 @@
-<div (click)="goToDetallePage()" *ngFor="let item of fakeArray">
-  <img class="img-ejercicio-listado" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGVqZXJjaWNpb3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+<div (click)="goToDetallePage()" *ngFor="let rutina of listadoRutinas">
+  <img class="img-ejercicio-listado" [src]="rutina.imagen">
   <ion-text class="nombre-ejercicio-listado" color="primary">
-    Lagartijas con Agarraderas
+    {{ rutina.nombre }}
   </ion-text><br>
   <ion-text class="descripcion-ejercicio-listado ion-text-wrap color-gris" color="medium">
-    Cuando tus manos cuentan con el apoyo de los agarres para flexiones, el radio de movimiento aumenta.
+    {{ rutina.descripcion }}
   </ion-text>
   <ion-grid>
     <ion-row>
       <ion-col class="columns-texto-icons-ejercicio-listado" size="3">
           <ion-icon class="icons-ejercicio-listado" color="warning" name="alarm-outline"></ion-icon>
           <ion-text class="texto-icons-ejercicio-listado" color="primary">
-            45min
+            <p>{{ rutina.series }} series</p>
           </ion-text>
       </ion-col>
       <ion-col class="columns-texto-icons-ejercicio-listado" size="3">
         <ion-icon style="font-size: 20px;" class="icons-ejercicio-listado" color="warning" name="flame-outline"></ion-icon>
         <ion-text class="texto-icons-ejercicio-listado" color="primary">
-          Medium
+          <p>{{ rutina.repeticiones }} reps</p>
         </ion-text>
       </ion-col>
     </ion-row>

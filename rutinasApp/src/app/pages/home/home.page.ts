@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FirebasesRutinasService } from '../../services/firebases-rutinas.service';
+import { Rutinas } from '../../models/rutinas.interface';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 
-export class HomePage {
+export class HomePage implements OnInit{
+  listadoRutinas: Rutinas[];
+  ngOnInit() {
+    this.firebaseService.getRutinas().subscribe(res => {
+      this.listadoRutinas = res;
+    });
+  }
 
   slideOpts = {
     initialSlide: 1,
@@ -30,8 +38,10 @@ export class HomePage {
     }
   ]
 
-  fakeArray = [1,1,1,1,1,1];
-  constructor(public router:Router) {}
+
+  constructor(public router:Router, private firebaseService: FirebasesRutinasService) {
+
+  }
 
   goToSearchPage() {
     this.router.navigate(['search-page']);

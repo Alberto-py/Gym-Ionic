@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Rutinas } from '../../models/rutinas.interface';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-listado-rutinas',
   templateUrl: './listado-rutinas.component.html',
@@ -7,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListadoRutinasComponent implements OnInit {
 
-  fakeArray = [1,1,1,1,1,1];
+  @Input() listadoRutinas: Observable<Rutinas[]>;
 
   constructor( public router: Router) { }
    ngOnInit() {}
@@ -16,6 +19,5 @@ export class ListadoRutinasComponent implements OnInit {
     this.router.navigate(['rutinas-detalles']);
   }
 
- 
 
 }
