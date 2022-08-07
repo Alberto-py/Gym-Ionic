@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebasesRutinasService } from '../../services/firebases-rutinas.service';
 
 @Component({
   selector: 'app-search-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private firebaseService: FirebasesRutinasService) {
+    this.firebaseService.cargarRutinas();
+  }
 
   ngOnInit() {
+  }
+
+  buscarRutina(event){
+    var nombre = event.detail.value;
+    this.firebaseService.searchRutina(nombre);
   }
 
 }

@@ -7,6 +7,7 @@ export interface Rutinas{
   descanso:string;
   tip:string;
   sugerencias:Array<Sugerencias>;
+  categoria:string;
 }
 
 export interface Sugerencias{

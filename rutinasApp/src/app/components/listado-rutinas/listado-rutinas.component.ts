@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ListadoRutinasComponent implements OnInit {
 
-  @Input() listadoRutinas: Observable<Rutinas[]>;
+  @Input() listadoRutinas: Rutinas[];
 
   constructor( public router: Router) { }
    ngOnInit() {}

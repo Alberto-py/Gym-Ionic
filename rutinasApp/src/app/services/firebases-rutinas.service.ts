@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { AngularFirestore} from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
 import { Rutinas } from '../models/rutinas.interface';
 
@@ -9,12 +8,18 @@ import { Rutinas } from '../models/rutinas.interface';
 })
 export class FirebasesRutinasService {
 
-  Collections: AngularFirestoreCollection<Rutinas>;
   // Array Rutinas
-  listadoRutinas: Observable<Rutinas[]>;
+  listadoRutinas: Rutinas[] = [];
+
+  //Categorias
+  listadoCategory: Rutinas[] = [];
+  categorieSelected: string = "";
+
+  //Buscar Rutinas
+  listadoBuscar: Rutinas[] = [];
 
   constructor(private firestore: AngularFirestore) {
-    this.Collections = firestore.collection<Rutinas>('rutinas');
+    /*this.Collections = firestore.collection<Rutinas>('rutinas');
     this.listadoRutinas = this.Collections.snapshotChanges().pipe(map(
       actions => {
         return actions.map(a => {
@@ -23,26 +28,38 @@ export class FirebasesRutinasService {
           return {id, ...data};
         });
       }
-    ));
+    ));*/
   }
 
-  getRutinas(){
-    return this.listadoRutinas;
+  cargarRutinas(){
+    this.firestore.collection('rutinas')
+                  .valueChanges()
+                  .pipe(
+                    map( (rutinas: Array<Rutinas>) => {
+                      this.listadoRutinas = rutinas;
+                    })
+                  ).subscribe();
   }
 
-  getRutina(id:string){
-    return this.Collections.doc<Rutinas>(id).valueChanges();
+  filtrarCategory(categorieSelected:string){
+    this.listadoCategory = [];
+    this.listadoRutinas.forEach( (rutina:Rutinas) => {
+      if(rutina.categoria == categorieSelected){
+        this.listadoCategory.push(rutina);
+      }
+    });
   }
 
-  updateRutina(listadoRutinas:Rutinas, id:string){
-    return this.Collections.doc(id).update(listadoRutinas)
+  searchRutina(nombre: string){
+    this.listadoBuscar = this.listadoRutinas;
+    if(nombre && nombre.trim() !== ""){
+      this.listadoBuscar = this.listadoBuscar.filter( rutina => {
+        return rutina.nombre.toLowerCase().indexOf(nombre.toLowerCase()) > -1;
+      });
+    } else{
+      //Input Vacio
+      this.listadoBuscar = [];
+    }
   }
 
-  addRutina(listadoRutinas:Rutinas){
-    return this.Collections.add(listadoRutinas);
-  }
-
-  removeRutina(id:string){
-    return this.Collections.doc(id).delete();
-  }
 }

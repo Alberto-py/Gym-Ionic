@@ -8,9 +8,9 @@
 
 <ion-content [fullscreen]="true" class="bg-app ion-padding">
   <ion-text class="encabezado" color="primary">
-    FullBody
+    {{ firebaseService.categorieSelected }}
   </ion-text>
   <br>
-  <app-listado-rutinas></app-listado-rutinas>
+  <app-listado-rutinas [listadoRutinas]="this.firebaseService.listadoCategory"></app-listado-rutinas>
 
 </ion-content>

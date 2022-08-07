@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FirebasesRutinasService } from '../../services/firebases-rutinas.service';
+import { Rutinas } from '../../models/rutinas.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-rutinas-categoria',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutinasCategoriaPage implements OnInit {
 
-  constructor() { }
+  constructor(private firebaseService: FirebasesRutinasService) { }
 
   ngOnInit() {
   }
