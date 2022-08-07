@@ -27,7 +27,11 @@
 
 
 .bg-app{
-    --background: #F4FCFF;
+    --background: #343e59;
+}
+
+.encabezado{
+  color: #fad8b3
 }
 
 .color-gris{
@@ -51,6 +55,7 @@
     font-size: 18px;
     font-weight: 500px;
     margin-top: 5px;
+    color: #fad8b3;
 }
 
 .descripcion-ejercicio-listado{
@@ -73,4 +78,5 @@
     font-size: 12px;
     font-weight: 400;
     margin-left: 3px;
+    color: #ffd650b4;
 }
