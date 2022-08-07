@@ -1,4 +1,4 @@
-<div (click)="goToDetallePage()" *ngFor="let rutina of listadoRutinas">
+<div (click)="goToDetallePage(rutina)" *ngFor="let rutina of listadoRutinas">
   <img class="img-ejercicio-listado" [src]="rutina.imagen">
   <ion-text class="nombre-ejercicio-listado" color="primary">
     {{ rutina.nombre }}

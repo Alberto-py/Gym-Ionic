@@ -18,6 +18,9 @@ export class FirebasesRutinasService {
   //Buscar Rutinas
   listadoBuscar: Rutinas[] = [];
 
+  // Detalles Rutinas
+  rutinaDetalle = {} as Rutinas;
+
   constructor(private firestore: AngularFirestore) {
     /*this.Collections = firestore.collection<Rutinas>('rutinas');
     this.listadoRutinas = this.Collections.snapshotChanges().pipe(map(
@@ -60,6 +63,10 @@ export class FirebasesRutinasService {
       //Input Vacio
       this.listadoBuscar = [];
     }
+  }
+
+  getRutinaDetalle(rutina: Rutinas) {
+    this.rutinaDetalle = rutina;
   }
 
 }

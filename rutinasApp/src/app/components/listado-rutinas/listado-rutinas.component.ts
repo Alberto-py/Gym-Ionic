@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Rutinas } from '../../models/rutinas.interface';
-import { Observable } from 'rxjs';
+import { FirebasesRutinasService } from '../../services/firebases-rutinas.service';
 
 @Component({
   selector: 'app-listado-rutinas',
@@ -12,10 +12,11 @@ export class ListadoRutinasComponent implements OnInit {
 
   @Input() listadoRutinas: Rutinas[];
 
-  constructor( public router: Router) { }
+  constructor( public router: Router, private firebaseService: FirebasesRutinasService) { }
    ngOnInit() {}
 
-  goToDetallePage() {
+  goToDetallePage(rutina: Rutinas) {
+    this.firebaseService.getRutinaDetalle(rutina);
     this.router.navigate(['rutinas-detalles']);
   }
 
